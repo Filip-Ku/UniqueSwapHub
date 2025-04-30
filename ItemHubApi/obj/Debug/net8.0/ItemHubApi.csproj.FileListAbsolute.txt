@@ -1,0 +1,8 @@
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.AssemblyInfo.cs
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.sourcelink.json
