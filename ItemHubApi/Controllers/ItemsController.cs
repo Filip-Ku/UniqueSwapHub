@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using HubApi.Data;
 using HubApi.Models;  
+
 
 namespace HubApi.Controllers
 {
@@ -19,6 +19,26 @@ namespace HubApi.Controllers
         public ActionResult<IEnumerable<ItemDetails>> GetItems()
         {
             return Ok(_context.Items.ToList());
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<ItemDetails> GetItem(int id)
+        {
+            var item = _context.Items.Find(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            return item;
+        }
+
+
+        [HttpPost]
+        public ActionResult<ItemDetails> PostItem(ItemDetails item)
+        {
+            _context.Items.Add(item);
+            _context.SaveChanges();
+            return CreatedAtAction(nameof(GetItem), new { id = item.ItemId }, item);
         }
 
     }

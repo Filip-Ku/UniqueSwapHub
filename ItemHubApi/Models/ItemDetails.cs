@@ -16,13 +16,13 @@ namespace HubApi.Models
         public string? Description { get; set; }
 
         [Required]
-        public DateTime CreatedAt { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
 
         [Required]
-        public DateTime reservationTime { get; set; }
+        public DateTimeOffset reservationTime { get; set; }
 
         [Required]
-        public DateTime ExpireDate { get; set; }
+        public DateTimeOffset ExpireDate { get; set; }
 
         [Range(0.01, double.MaxValue, ErrorMessage = "Cena musi być większa od 0")]
         public float PricePerDay { get; set; }
