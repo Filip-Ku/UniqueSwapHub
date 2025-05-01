@@ -9,6 +9,8 @@ namespace HubApi.Models
         [Key]
         public int ItemId { get; set; }
 
+        public int? UserId { get; set; } = null;
+
         [Required(ErrorMessage = "Nazwa jest wymagana")]
         public required string Name { get; set; }
 
@@ -32,5 +34,8 @@ namespace HubApi.Models
         [Required(ErrorMessage = "Link do zdjęcia jest wymagany")]
         [Url(ErrorMessage = "Nieprawidłowy format URL")]
         public required string ImageUrl { get; set; }
+
+        [ForeignKey("UserId")]
+        public User User { get; set; }
     }
 }
