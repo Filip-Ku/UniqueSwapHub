@@ -16,23 +16,18 @@ namespace HubApi.Models
 
             modelBuilder.Entity<ItemDetails>().ToTable("items", "itemhub");
             modelBuilder.Entity<ItemDetails>()
-                .Property(x => x.CreatedAt)
+                .Property(x => x.createdAt)
                 .HasColumnType("timestamp with time zone");
             modelBuilder.Entity<ItemDetails>()
                 .Property(x => x.reservationTime)
                 .HasColumnType("timestamp with time zone");
             modelBuilder.Entity<ItemDetails>()
-                .Property(x => x.ExpireDate)
+                .Property(x => x.expireDate)
                 .HasColumnType("timestamp with time zone");
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-            modelBuilder.Entity<ItemDetails>()
-                .HasOne(i => i.User)
-                .WithMany(u => u.Items)
-                .HasForeignKey(i => i.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<User>().ToTable("users", "itemhub");
-            modelBuilder.Entity<User>().HasKey(u => u.UserId);
+            modelBuilder.Entity<User>().HasKey(u => u.userId);
         }
     }
 }

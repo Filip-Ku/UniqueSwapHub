@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,35 +8,32 @@ namespace HubApi.Models
     public class ItemDetails
     {
         [Key]
-        public int ItemId { get; set; }
+        public int itemId { get; set; }
 
-        public int? UserId { get; set; } = null;
+        public int? userId { get; set; }
 
         [Required(ErrorMessage = "Nazwa jest wymagana")]
-        public required string Name { get; set; }
+        public required string name { get; set; }
 
         [Required(ErrorMessage = "Opis jest wymagany")]
-        public string? Description { get; set; }
+        public string? description { get; set; }
 
         [Required]
-        public DateTimeOffset CreatedAt { get; set; }
+        public DateTimeOffset createdAt { get; set; }
 
         [Required]
         public DateTimeOffset reservationTime { get; set; }
 
         [Required]
-        public DateTimeOffset ExpireDate { get; set; }
+        public DateTimeOffset expireDate { get; set; }
 
         [Range(0.01, double.MaxValue, ErrorMessage = "Cena musi być większa od 0")]
-        public float PricePerDay { get; set; }
+        public float pricePerDay { get; set; }
 
-        public bool Available { get; set; }
+        public bool available { get; set; }
 
         [Required(ErrorMessage = "Link do zdjęcia jest wymagany")]
         [Url(ErrorMessage = "Nieprawidłowy format URL")]
-        public required string ImageUrl { get; set; }
-
-        [ForeignKey("UserId")]
-        public User User { get; set; }
+        public required string imageUrl { get; set; }
     }
 }

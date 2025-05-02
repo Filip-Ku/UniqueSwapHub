@@ -1,26 +1,30 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HubApi.Models
 {
+    [Table("Users", Schema = "itemhub")]
     public class User
     {
         [Key]
-        public int UserId { get; set; }
+        public int userId { get; set; }
 
-        [Required(ErrorMessage = "Nazwa jest wymagana")]
-        public string Name { get; set; }
+        public required string name { get; set; }
 
-        public string HashedPassword { get; set; }
+        public required string hashedPassword { get; set; }
 
-        public string email { get; set; }
-        public string Role { get; set; }
+        public required string email { get; set; }
 
-        public string firstName { get; set; }
+        public required string role { get; set; }
+
+        public required string firstName { get; set; }
+
         public string? lastName { get; set; }
+
         public DateTimeOffset createdAt { get; set; }
 
-        public ICollection<ItemDetails> Items { get; set; } = new List<ItemDetails>();
+        public ICollection<ItemDetails> items { get; set; } = new List<ItemDetails>();
     }
 }
