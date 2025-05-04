@@ -22,6 +22,9 @@ namespace HubApi.Models
         public DateTimeOffset createdAt { get; set; }
 
         [Required]
+        public bool activated { get; set; } = false;
+
+        [Required]
         public DateTimeOffset reservationTime { get; set; }
 
         [Required]

@@ -105,6 +105,20 @@ namespace HubApi.Controllers
             return item;
         }
 
+        [HttpGet("activated")]
+        public async Task<ActionResult<IEnumerable<ItemDetails>>> GetActivatedItems()
+        {
+            var items = await _context.Items.Where(i => i.activated == true).ToListAsync();
+            return Ok(items);
+        }
+
+        [HttpGet("unactivated")]
+        public async Task<ActionResult<IEnumerable<ItemDetails>>> GetUnactivatedItems()
+        {
+            var items = await _context.Items.Where(i => i.activated == false).ToListAsync();
+            return Ok(items);
+        }
+
         // Helper
         private async Task<bool> ItemExistsAsync(int id)
         {

@@ -14,7 +14,8 @@ namespace HubApi.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<ItemDetails>().ToTable("items", "itemhub");
+            modelBuilder.HasDefaultSchema("itemhub");
+
             modelBuilder.Entity<ItemDetails>()
                 .Property(x => x.createdAt)
                 .HasColumnType("timestamp with time zone");
@@ -24,10 +25,42 @@ namespace HubApi.Models
             modelBuilder.Entity<ItemDetails>()
                 .Property(x => x.expireDate)
                 .HasColumnType("timestamp with time zone");
+
+            modelBuilder.Entity<User>().HasKey(u => u.userId);
+
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
-            modelBuilder.Entity<User>().ToTable("users", "itemhub");
-            modelBuilder.Entity<User>().HasKey(u => u.userId);
+            UseLowerCaseNames(modelBuilder);
+        }
+
+
+
+          private void UseLowerCaseNames(ModelBuilder modelBuilder)
+        {
+            foreach (var entity in modelBuilder.Model.GetEntityTypes())
+            {
+                entity.SetTableName(entity.GetTableName()?.ToLower());
+
+                foreach (var property in entity.GetProperties())
+                {
+                    property.SetColumnName(property.GetColumnName()?.ToLower());
+                }
+
+                foreach (var key in entity.GetKeys())
+                {
+                    key.SetName(key.GetName()?.ToLower());
+                }
+
+                foreach (var index in entity.GetIndexes())
+                {
+                    index.SetDatabaseName(index.GetDatabaseName()?.ToLower());
+                }
+
+                foreach (var fk in entity.GetForeignKeys())
+                {
+                    fk.SetConstraintName(fk.GetConstraintName()?.ToLower());
+                }
+            }
         }
     }
 }
