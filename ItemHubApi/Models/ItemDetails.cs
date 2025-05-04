@@ -4,13 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HubApi.Models
 {
-    [Table("Items", Schema = "itemhub")]
+    [Table("items", Schema = "itemhub")]
     public class ItemDetails
     {
         [Key]
         public int itemId { get; set; }
 
-        public int? userId { get; set; }
+        [ForeignKey("User")]
+        public int userId { get; set; }
 
         [Required(ErrorMessage = "Nazwa jest wymagana")]
         public required string name { get; set; }

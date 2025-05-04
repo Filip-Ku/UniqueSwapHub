@@ -1,3 +1,11 @@
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.AssemblyInfo.cs
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.sourcelink.json
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\bin\Debug\net8.0\appsettings.json
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\bin\Debug\net8.0\ItemHubApi.exe
@@ -112,14 +120,6 @@ C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\bin\Debug\net8.0
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
-C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.csproj.AssemblyReference.cache
-C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.AssemblyInfoInputs.cache
-C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.AssemblyInfo.cs
-C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.csproj.CoreCompileInputs.cache
-C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\ItemHubApi.sourcelink.json
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubApi\obj\Debug\net8.0\staticwebassets\msbuild.ItemHubApi.Microsoft.AspNetCore.StaticWebAssets.props

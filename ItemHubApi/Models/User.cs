@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HubApi.Models
 {
-    [Table("Users", Schema = "itemhub")]
+    [Table("users", Schema = "itemhub")]
     public class User
     {
         [Key]

@@ -10,6 +10,8 @@ namespace HubApi.Models
         public DbSet<ItemDetails> Items { get; set; }
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Reservation> Reservations { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -28,11 +30,12 @@ namespace HubApi.Models
 
             modelBuilder.Entity<User>().HasKey(u => u.userId);
 
+            modelBuilder.Entity<Reservation>().HasKey(r => r.reservationId);
+
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
             UseLowerCaseNames(modelBuilder);
         }
-
 
 
           private void UseLowerCaseNames(ModelBuilder modelBuilder)
