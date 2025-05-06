@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Wynajmij co  chcesz</h1>
+<div class="text-center">
+        @if (Model.Items != null)
+{
+    <ul>
+    @foreach (var item in Model.Items)
+    {
+        <li>
+            <img src="@item.imageUrl" alt="@item.name" width="100" />
+            <strong>@item.name</strong> - @item.pricePerDay zł/dzień<br />
+            Dostępny: @(item.available ? "Tak" : "Nie")<br />
+            Opis: @item.description
+        </li>
+    }
+    </ul>
+}
+else
+{
+    <p>Brak danych.</p>
+}
+
+</div>

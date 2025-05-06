@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("ItemHubApi")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ItemHubFront")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd95b54e605132d6f8805c5d0d85e81f3b796d00")]
-[assembly: System.Reflection.AssemblyProductAttribute("ItemHubApi")]
-[assembly: System.Reflection.AssemblyTitleAttribute("ItemHubApi")]
+[assembly: System.Reflection.AssemblyProductAttribute("ItemHubFront")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ItemHubFront")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Wygenerowane przez klasę WriteCodeFragment programu MSBuild.
