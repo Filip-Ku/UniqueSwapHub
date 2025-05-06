@@ -24,7 +24,7 @@ public class IndexModel : PageModel
     {
         try 
         {
-            var response = await _httpClient.GetAsync("http://localhost:5250/api/items/activated");
+            var response = await _httpClient.GetAsync("http://localhost:5250/api/items/unactivated");
             response.EnsureSuccessStatusCode();
 
             var json = await response.Content.ReadAsStringAsync();

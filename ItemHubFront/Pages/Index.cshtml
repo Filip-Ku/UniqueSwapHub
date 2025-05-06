@@ -4,26 +4,93 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Wynajmij co  chcesz</h1>
-<div class="text-center">
-        @if (Model.Items != null)
+<h1 class="display-4 text-center mb-5">Wynajmij co chcesz</h1>
+
+@if (Model.Items != null && Model.Items.Any())
 {
-    <ul>
+    <div class="item-grid">
     @foreach (var item in Model.Items)
     {
-        <li>
-            <img src="@item.imageUrl" alt="@item.name" width="100" />
-            <strong>@item.name</strong> - @item.pricePerDay zł/dzień<br />
-            Dostępny: @(item.available ? "Tak" : "Nie")<br />
-            Opis: @item.description
-        </li>
+        <div class="item-card">
+            <div class="item-image-wrapper">
+                <img src="@item.imageUrl" alt="@item.name" class="item-image" />
+            </div>
+            <div class="item-info">
+                <h5 class="item-title">@item.name</h5>
+                <p class="item-price">@item.pricePerDay zł/dzień</p>
+                <p class="item-available">Dostępny: <strong>@(item.available ? "Tak" : "Nie")</strong></p>
+                <p class="item-description">@item.description</p>
+            </div>
+        </div>
     }
-    </ul>
+    </div>
 }
 else
 {
-    <p>Brak danych.</p>
+    <p class="text-center">Brak danych.</p>
 }
 
-</div>
+<style>
+    .item-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2%;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+
+    .item-card {
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #fff;
+        width: 48%; 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        transition: transform 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .item-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .item-image-wrapper {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        background-color: #f9f9f9;
+    }
+
+    .item-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .item-info {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .item-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .item-price {
+        font-size: 1rem;
+        color: #1c8f5c;
+        font-weight: 500;
+    }
+
+    .item-available,
+    .item-description {
+        font-size: 0.85rem;
+        color: #666;
+    }
+
+</style>
