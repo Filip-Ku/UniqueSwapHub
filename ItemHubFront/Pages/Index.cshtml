@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home page";
 }
 
-<h1 class="display-4 text-center mb-5">Wynajmij co chcesz</h1>
+<h1 class="display-4 text-center mb-5 stylized-heading">Wynajmuj łatwo. Korzystaj mądrze.</h1>
 
 @if (Model.Items != null && Model.Items.Any())
 {
@@ -92,5 +92,26 @@ else
         font-size: 0.85rem;
         color: #666;
     }
+
+    .stylized-heading {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #4b7bec;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(45deg, #4b7bec, #6a1b9a);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.stylized-heading:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
 
 </style>

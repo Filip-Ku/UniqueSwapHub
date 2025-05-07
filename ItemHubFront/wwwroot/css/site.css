@@ -20,3 +20,31 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.stylish-navbar {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  transition: background 0.5s ease;
+}
+
+.navbar-brand {
+  color: #fff !important;
+}
+
+.stylish-link {
+  color: #f1f1f1 !important;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.stylish-link:hover {
+  color: #ffe082 !important;
+  transform: scale(1.05);
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  filter: brightness(90%);
+}
