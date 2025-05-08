@@ -11,7 +11,17 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocalhost",
+        policy => policy.WithOrigins("http://localhost:5110")
+                         .AllowAnyMethod()
+                         .AllowAnyHeader());
+});
+
 var app = builder.Build();
+
+app.UseCors("AllowLocalhost");
 
 if (app.Environment.IsDevelopment())
 {

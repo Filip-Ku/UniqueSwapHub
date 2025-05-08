@@ -6,6 +6,21 @@
 
 <h1 class="display-4 text-center mb-5 stylized-heading">Wynajmuj łatwo. Korzystaj mądrze.</h1>
 
+<form method="post" asp-page="./Index" asp-page-handler="Search" id="searchForm">
+    <div class="input-group w-50 mx-auto mb-4">
+        <input 
+            type="text" 
+            id="searchInput" 
+            name="SearchText" 
+            class="form-control" 
+            placeholder="Wyszukaj przedmiot..."
+            value="@Model.SearchText" />
+        <button type="submit" class="btn btn-primary">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F011%2F732%2F488%2Foriginal%2Fhand-drawn-magnifying-glass-illustration-png.png&f=1&nofb=1&ipt=78dfae994f7c12a12c3192e2ea368852f07c002716881c8e96655b9339c202c7" alt="Szukaj" style="width: 30px; height: 30px;" />
+        </button>
+    </div>
+</form>
+
 @if (Model.Items != null && Model.Items.Any())
 {
     <div class="item-grid">
@@ -112,6 +127,5 @@ else
     transform: scale(1.1);
     opacity: 0.8;
 }
-
 
 </style>

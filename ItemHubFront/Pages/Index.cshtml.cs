@@ -14,6 +14,9 @@ public class IndexModel : PageModel
 
     public List<ItemDto>? Items { get; set; }
 
+    [BindProperty]
+    public string SearchText { get; set; }
+
     public IndexModel(ILogger<IndexModel> logger)
     {
         _logger = logger;
@@ -33,6 +36,31 @@ public class IndexModel : PageModel
         catch (HttpRequestException e)
         {
             _logger.LogError(e, "Błąd pobierania danych z API");
+        }
+    }
+
+    public async Task<IActionResult> OnPostSearchAsync()
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(SearchText))
+            {
+                await OnGetAsync();
+            }
+            
+
+            var response = await _httpClient.GetAsync($"http://localhost:5250/api/items/search/{SearchText}");
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+            Items = JsonSerializer.Deserialize<List<ItemDto>>(json);
+
+            return Page();
+        }
+        catch (HttpRequestException e)
+        {
+            _logger.LogError(e, "Błąd pobierania danych z API");
+            return Page();
         }
     }
 }

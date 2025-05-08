@@ -38,7 +38,7 @@ body {
 
 .stylish-link:hover {
   color: #ffe082 !important;
-  transform: scale(1.05);
+  transform: scale(1.2);
 }
 
 .navbar-toggler {
