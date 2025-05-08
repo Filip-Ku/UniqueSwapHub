@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TdfB712NYyB7LP3H3Ydk3cdOZD1fuYJ8gPDF0Og/Sm8=",
+  "Hash": "00CEMMB0883pGufFpdcEMLXpQvN24tqg/imkFRx9pAY=",
   "Source": "ItemHubFront",
   "BasePath": "_content/ItemHubFront",
   "Mode": "Default",
@@ -1193,6 +1193,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\Studia\\Portfolio\\UniqueSwapHub\\ItemHubFront\\wwwroot\\logo.png",
+      "SourceId": "ItemHubFront",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\Studia\\Portfolio\\UniqueSwapHub\\ItemHubFront\\wwwroot\\",
+      "BasePath": "_content/ItemHubFront",
+      "RelativePath": "logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo.png"
     }
   ]
 }

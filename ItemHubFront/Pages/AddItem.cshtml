@@ -6,48 +6,50 @@
 }
 
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Add New Item</h2>
+    <div class="form-container">
+        <h2 class="text-center mb-4">Add New Item</h2>
 
-    <form method="post" enctype="multipart/form-data">
-        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-        <div class="form-group">
-            <label asp-for="Item.name" class="control-label font-weight-bold">Item Name</label>
-            <input asp-for="Item.name" class="form-control" placeholder="Enter item name" />
-            <span asp-validation-for="Item.name" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Item.description" class="control-label font-weight-bold">Item Description</label>
-            <textarea asp-for="Item.description" class="form-control" rows="4" placeholder="Describe the item"></textarea>
-            <span asp-validation-for="Item.description" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Item.pricePerDay" class="control-label font-weight-bold">Price per Day</label>
-            <input asp-for="Item.pricePerDay" class="form-control" type="number" step="0.01" placeholder="Enter price per day" />
-            <span asp-validation-for="Item.pricePerDay" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label class="font-weight-bold">Image:</label>
-            <input type="file" id="imageUpload" name="imageUpload" class="form-control" accept="image/*" />
-            <div id="imagePreviewContainer" style="display:none; margin-top:10px;">
-                <img id="imagePreview" src="#" alt="Image preview" class="img-thumbnail" width="200" />
+            <div class="form-group">
+                <label asp-for="Item.name" class="control-label font-weight-bold">Item Name</label>
+                <input asp-for="Item.name" class="form-control input-field" placeholder="Enter item name" />
+                <span asp-validation-for="Item.name" class="text-danger"></span>
             </div>
-            <span asp-validation-for="Item.imageUrl" class="text-danger"></span>
-        </div>
 
-        <div class="form-group">
-            <label asp-for="Item.expireDate" class="control-label font-weight-bold">Expire Date</label>
-            <input asp-for="Item.expireDate" class="form-control" type="date" />
-            <span asp-validation-for="Item.expireDate" class="text-danger"></span>
-        </div>
+            <div class="form-group">
+                <label asp-for="Item.description" class="control-label font-weight-bold">Item Description</label>
+                <textarea asp-for="Item.description" class="form-control input-field" rows="4" placeholder="Describe the item"></textarea>
+                <span asp-validation-for="Item.description" class="text-danger"></span>
+            </div>
 
-        <div class="form-group text-center">
-            <input type="submit" value="Add Item" class="btn btn-primary btn-lg" />
-        </div>
-    </form>
+            <div class="form-group">
+                <label asp-for="Item.pricePerDay" class="control-label font-weight-bold">Price per Day</label>
+                <input asp-for="Item.pricePerDay" class="form-control input-field" type="number" step="0.01" placeholder="Enter price per day" />
+                <span asp-validation-for="Item.pricePerDay" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="font-weight-bold">Image:</label>
+                <input type="file" id="imageUpload" name="imageUpload" class="form-control input-field" accept="image/*" />
+                <div id="imagePreviewContainer" style="display:none; margin-top:10px;">
+                    <img id="imagePreview" src="#" alt="Image preview" class="img-thumbnail" width="200" />
+                </div>
+                <span asp-validation-for="Item.imageUrl" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Item.expireDate" class="control-label font-weight-bold">Expire Date</label>
+                <input asp-for="Item.expireDate" class="form-control input-field" type="date" />
+                <span asp-validation-for="Item.expireDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group text-center">
+                <input type="submit" value="Add Item" class="btn-submit" />
+            </div>
+        </form>
+    </div>
 </div>
 
 @section Scripts {
@@ -68,5 +70,100 @@
                 reader.readAsDataURL(file); 
             }
         });
+
+        const inputs = document.querySelectorAll('.input-field');
+
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === "") {
+                    this.classList.add('is-invalid');
+                    this.classList.remove('is-valid');
+                } else {
+                    this.classList.add('is-valid');
+                    this.classList.remove('is-invalid');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+    const today = new Date().toISOString().split('T')[0];  
+    document.querySelector('input[type="date"]').value = today;
+});
     </script>
 }
+
+<style>
+    .form-container {
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .form-container h2 {
+        color: #333;
+    }
+
+    .form-group label {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .input-field {
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
+    .input-field.is-invalid {
+        border-color: red;
+        background-color: #ffe6e6;
+    }
+
+    .input-field.is-valid {
+        border-color: green;
+        background-color: #e6ffe6;
+    }
+
+    .form-group span {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .img-thumbnail {
+        border-radius: 5px;
+    }
+
+    .btn-submit {
+        width: auto;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-submit:hover {
+        background-color: #218838;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-submit:active {
+        transform: translateY(2px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+

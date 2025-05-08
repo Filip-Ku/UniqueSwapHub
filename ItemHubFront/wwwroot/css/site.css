@@ -30,6 +30,10 @@ body {
   color: #fff !important;
 }
 
+.navbar{
+  padding: 15px;
+}
+
 .stylish-link {
   color: #f1f1f1 !important;
   font-weight: 500;

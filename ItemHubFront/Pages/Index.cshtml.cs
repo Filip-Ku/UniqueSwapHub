@@ -48,7 +48,6 @@ public class IndexModel : PageModel
                 await OnGetAsync();
             }
             
-
             var response = await _httpClient.GetAsync($"http://localhost:5250/api/items/search/{SearchText}");
             response.EnsureSuccessStatusCode();
 

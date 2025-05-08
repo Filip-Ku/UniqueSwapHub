@@ -1,11 +1,14 @@
 @* Views/Shared/_Navbar.cshtml *@
 <nav class="navbar navbar-expand-lg navbar-dark stylish-navbar shadow-sm">
-    <div class="container">
-        <a class="navbar-brand fw-bold fs-4" asp-area="" asp-page="/Index">
+    <div class="container d-flex justify-content-between align-items-center">
+        <!-- Brand (Logo / Text) -->
+        <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" asp-area="" asp-page="/Index">
             <i class="bi bi-box-seam me-2"></i>ItemHubFront
         </a>
-        <div class="navbar-collapse justify-content-end">
-            <ul class="navbar-nav d-flex flex-row gap-3 align-items-center">
+
+        <!-- Linki nawigacyjne -->
+        <div class="d-flex align-items-center">
+            <ul class="navbar-nav d-flex flex-row gap-3 align-items-center mb-0">
                 <li class="nav-item">
                     <a class="nav-link stylish-link" asp-area="" asp-page="/Index">
                         <i class="bi bi-house-door me-1"></i>Home
@@ -19,6 +22,11 @@
                 <li class="nav-item">
                     <a class="nav-link stylish-link" asp-area="" asp-page="/AddItem">
                         <i class="bi bi-plus-circle me-1"></i>Add New Item
+                    </a>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link stylish-link" asp-area="" asp-page="/*">
+                        <i class="bi bi-plus-circle me-1"></i>Login
                     </a>
                 </li>
             </ul>
