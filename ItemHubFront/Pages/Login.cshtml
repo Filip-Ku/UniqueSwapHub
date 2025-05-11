@@ -1,0 +1,116 @@
+@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-5">
+    <div class="form-container">
+        <h2 class="text-center mb-4">Log in</h2>
+
+        <form method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="form-group">
+                <label asp-for="UserLogin.Email" class="control-label font-weight-bold">Email</label>
+                <input asp-for="UserLogin.Email" class="form-control input-field" placeholder="Enter your email" />
+                <span asp-validation-for="UserLogin.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="UserLogin.Password" class="control-label font-weight-bold">Password</label>
+                <input asp-for="UserLogin.Password" type="password" class="form-control input-field" placeholder="Enter your password" />
+                <span asp-validation-for="UserLogin.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn-submit">Log in</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const inputs = document.querySelectorAll('.input-field');
+
+        inputs.forEach(input => {
+            input.addEventListener('blur', function () {
+                if (this.value.trim() === "") {
+                    this.classList.add('is-invalid');
+                    this.classList.remove('is-valid');
+                } else {
+                    this.classList.add('is-valid');
+                    this.classList.remove('is-invalid');
+                }
+            });
+        });
+    </script>
+}
+
+<style>
+    .form-container {
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .form-container h2 {
+        color: #333;
+    }
+
+    .form-group label {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .input-field {
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
+    .input-field.is-invalid {
+        border-color: red;
+        background-color: #ffe6e6;
+    }
+
+    .input-field.is-valid {
+        border-color: green;
+        background-color: #e6ffe6;
+    }
+
+    .form-group span {
+        font-size: 0.9rem;
+    }
+
+    .btn-submit {
+        width: auto;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-submit:active {
+        transform: translateY(2px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+</style>
