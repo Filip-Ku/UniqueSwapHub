@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HubApi.Models
 {
-    [Table("items", Schema = "itemhub")]
+    [Table("items")]
     public class ItemDetails
     {
         [Key]
@@ -20,16 +20,15 @@ namespace HubApi.Models
         public string? description { get; set; }
 
         [Required]
-        public DateTimeOffset createdAt { get; set; }
+        public DateTime createdAt { get; set; } = DateTime.UtcNow;
 
         [Required]
         public bool activated { get; set; } = false;
 
-        [Required]
-        public DateTimeOffset reservationTime { get; set; }
+        public DateTime? reservationTime { get; set; }
 
         [Required]
-        public DateTimeOffset expireDate { get; set; }
+        public DateTime expireDate { get; set; }
 
         [Range(0.01, double.MaxValue, ErrorMessage = "Cena musi być większa od 0")]
         public float pricePerDay { get; set; }

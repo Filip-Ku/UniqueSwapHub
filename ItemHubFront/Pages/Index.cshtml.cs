@@ -17,6 +17,9 @@ public class IndexModel : PageModel
     [BindProperty]
     public string SearchText { get; set; }
 
+    public int ItemCount { get; set; }
+
+
     public IndexModel(ILogger<IndexModel> logger)
     {
         _logger = logger;
@@ -25,6 +28,7 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
+        await OnGetItemCountAsync();
         try 
         {
             var response = await _httpClient.GetAsync("http://localhost:5250/api/items/unactivated");
@@ -62,4 +66,19 @@ public class IndexModel : PageModel
             return Page();
         }
     }
+
+    public async Task OnGetItemCountAsync()
+{
+    try
+    {
+        var response = await _httpClient.GetAsync("http://localhost:5250/api/items/count");
+        response.EnsureSuccessStatusCode();
+        ItemCount = await response.Content.ReadFromJsonAsync<int>();
+    }
+    catch (HttpRequestException e)
+    {
+        _logger.LogError(e, "Błąd pobierania danych z API");
+        ItemCount = 0;
+    }
+}
 }

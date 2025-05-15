@@ -119,6 +119,14 @@ namespace HubApi.Controllers
             return Ok(items);
         }
 
+
+        [HttpGet("count")]
+        public async Task<ActionResult<int>> GetItemsCount()
+        {
+            var count = await _context.Items.CountAsync();
+            return Ok(count);
+        }
+
         // Helper
         private async Task<bool> ItemExistsAsync(int id)
         {

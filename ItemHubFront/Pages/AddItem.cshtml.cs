@@ -21,6 +21,7 @@ public class AddItemModel : PageModel
     {
         _cloudinary = cloudinary;
         _httpClient = httpClientFactory.CreateClient();
+        
     }
 
 
@@ -41,9 +42,11 @@ public class AddItemModel : PageModel
         {
             Item.available = true;
             Item.activated = false;
-            Item.createdAt = DateTimeOffset.Now;
+            Item.createdAt = DateTime.UtcNow;
             Item.userId = 1;
-            Item.reservationTime = DateTimeOffset.MinValue;;
+
+            Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(Item));
+
 
             var response = await _httpClient.PostAsJsonAsync("http://localhost:5250/api/items", Item);
         
@@ -56,8 +59,7 @@ public class AddItemModel : PageModel
         {
             return Page();
         }
-
-        return RedirectToPage("./Index");
+       return RedirectToPage("./Index");
     }
 
     private async Task<string> UploadImageToCloudinary(IFormFile file)

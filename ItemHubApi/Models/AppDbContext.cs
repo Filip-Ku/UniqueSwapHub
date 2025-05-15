@@ -1,6 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using HubApi.Models;
-
 namespace HubApi.Models
 {
     public class AppDbContext : DbContext
@@ -16,23 +14,20 @@ namespace HubApi.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.HasDefaultSchema("itemhub");
-
             modelBuilder.Entity<ItemDetails>()
                 .Property(x => x.createdAt)
-                .HasColumnType("timestamp with time zone");
+                .HasColumnType("datetime");
             modelBuilder.Entity<ItemDetails>()
                 .Property(x => x.reservationTime)
-                .HasColumnType("timestamp with time zone");
+                .HasColumnType("datetime");
             modelBuilder.Entity<ItemDetails>()
                 .Property(x => x.expireDate)
-                .HasColumnType("timestamp with time zone");
+                .HasColumnType("datetime");
 
             modelBuilder.Entity<User>().HasKey(u => u.userId);
 
             modelBuilder.Entity<Reservation>().HasKey(r => r.reservationId);
 
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
             UseLowerCaseNames(modelBuilder);
         }

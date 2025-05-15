@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HubApi.Models
 {
-    [Table("users", Schema = "itemhub")]
+    [Table("users")]
     public class User
     {
         [Key]
@@ -23,7 +23,7 @@ namespace HubApi.Models
 
         public string? lastName { get; set; }
 
-        public DateTimeOffset createdAt { get; set; }
+        public DateTime createdAt { get; set; }
 
         public ICollection<ItemDetails> items { get; set; } = new List<ItemDetails>();
     }

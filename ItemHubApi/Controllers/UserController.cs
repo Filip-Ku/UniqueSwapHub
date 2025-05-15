@@ -62,7 +62,7 @@ namespace HubApi.Controllers
                 hashedPassword = BCrypt.Net.BCrypt.HashPassword(userRegisterDto.password),
                 name = userRegisterDto.name,
                 role = "user", 
-                createdAt = DateTimeOffset.UtcNow,
+                createdAt = DateTime.UtcNow,
                 firstName = userRegisterDto.firstName,
                 lastName = userRegisterDto.lastName
             };

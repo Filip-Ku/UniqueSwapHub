@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HubApi.Models
 {
-    [Table("reservations", Schema = "itemhub")]
+    [Table("reservations")]
     public class Reservation 
     {
         [Key]
@@ -13,7 +13,7 @@ namespace HubApi.Models
         public int userId {get; set;}
         public int itemId {get; set;}
 
-        public DateTimeOffset startDate {get; set; }
-        public DateTimeOffset endDate {get; set; }
+        public DateTime startDate {get; set; }
+        public DateTime endDate {get; set; }
     }
 }
