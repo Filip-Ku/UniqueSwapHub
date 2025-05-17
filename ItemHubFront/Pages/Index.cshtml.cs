@@ -18,13 +18,14 @@ public class IndexModel : PageModel
     public string SearchText { get; set; }
 
     public int ItemCount { get; set; }
+    
 
-
-    public IndexModel(ILogger<IndexModel> logger)
+    public IndexModel(ILogger<IndexModel> logger, HttpClient httpClient)
     {
         _logger = logger;
-        _httpClient = new HttpClient();
+        _httpClient = httpClient;
     }
+
 
     public async Task OnGetAsync()
     {

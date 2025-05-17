@@ -7,7 +7,12 @@ C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\bin\Debug\net8
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\bin\Debug\net8.0\ItemHubFront.dll
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\bin\Debug\net8.0\ItemHubFront.pdb
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\bin\Debug\net8.0\CloudinaryDotNet.dll
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\obj\Debug\net8.0\ItemHubFront.csproj.AssemblyReference.cache
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\obj\Debug\net8.0\ItemHubFront.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\user\Desktop\Studia\Portfolio\UniqueSwapHub\ItemHubFront\obj\Debug\net8.0\ItemHubFront.AssemblyInfoInputs.cache

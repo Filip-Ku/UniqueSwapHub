@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using HubApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HubApi.Controllers
 {

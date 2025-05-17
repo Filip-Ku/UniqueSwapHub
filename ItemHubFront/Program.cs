@@ -8,6 +8,14 @@ var configuration = builder.Configuration;
 
 services.AddHttpClient();
 
+services.AddDistributedMemoryCache();
+services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 services.AddSingleton(x =>
 {
     var cloudName = configuration["Cloudinary:CloudName"];
@@ -29,6 +37,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
+app.UseSession();
 
 app.MapRazorPages();
 
