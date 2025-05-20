@@ -1,1 +1,14 @@
-appsetting.json
+appsettings.Development.json
+appsettings.Production.json
+appsettings.*.json
+
+/Migrations/
+
+/bin/
+/obj/
+
+.vscode/
+*.user
+*.suo
+
+*.db
